@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeLine Rescue Bot | Emergency Survival Assistance System</title>
+    <meta
+      name="description"
+      content="LifeLine Rescue Bot is a real-time rescue operations dashboard and project showcase for borewell and confined-space emergency response."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader__core">
+        <span class="section-badge">Initializing Rescue Control Room</span>
+        <h2>LifeLine Rescue Bot</h2>
+        <div class="preloader__bar">
+          <span id="preloaderBar"></span>
+        </div>
+        <p id="preloaderValue">0%</p>
+      </div>
+    </div>
+
+    <div class="site-background" aria-hidden="true">
+      <div class="site-background__grid"></div>
+      <div class="site-background__glow site-background__glow--orange"></div>
+      <div class="site-background__glow site-background__glow--cyan"></div>
+      <div class="site-background__scan"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#hero" aria-label="LifeLine Rescue Bot home">
+        <span class="brand__mark">LL</span>
+        <span class="brand__text">
+          <strong>LifeLine Rescue Bot</strong>
+          <small>Rescue Operations Control Room</small>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#overview">Overview</a>
+        <a href="#robot">Robot</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#video">Video Feed</a>
+        <a href="#features">Features</a>
+        <a href="#specs">Specifications</a>
+        <a href="#team">Team</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero__copy reveal">
+          <span class="section-badge">Emergency Survival Assistance System</span>
+          <h1>LifeLine Rescue Bot</h1>
+          <p class="hero__subtitle">
+            Emergency Survival Assistance System for Borewell and Confined-Space
+            Rescue Operations
+          </p>
+          <p class="hero__description">
+            A mission-ready robotic rescue platform engineered to deliver live
+            monitoring, environmental telemetry, oxygen and water support, and
+            operator-guided intervention when human access is impossible.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#dashboard">View Dashboard</a>
+            <a class="btn btn--secondary" href="#overview">Learn More</a>
+          </div>
+
+          <div class="hero__stats">
+            <article class="surface mini-stat">
+              <span class="mini-stat__label">Target Environments</span>
+              <strong>Borewells, tunnels, mines, shafts</strong>
+            </article>
+            <article class="surface mini-stat">
+              <span class="mini-stat__label">Core Capability</span>
+              <strong>Live survival support + telemetry</strong>
+            </article>
+            <article class="surface mini-stat">
+              <span class="mini-stat__label">Mission Readiness</span>
+              <strong>Rapid deployment, operator controlled</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero__visual surface reveal">
+          <div class="visual-head">
+            <span>Active Rescue Schematic</span>
+            <span class="signal-pill">
+              <i></i>
+              Control Link Secure
+            </span>
+          </div>
+
+          <svg
+            class="hero-bot"
+            viewBox="0 0 420 620"
+            role="img"
+            aria-label="Stylized rescue robot illustration"
+          >
+            <defs>
+              <linearGradient id="heroBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#122231" />
+                <stop offset="100%" stop-color="#1b3349" />
+              </linearGradient>
+              <linearGradient id="heroAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4ff" />
+                <stop offset="100%" stop-color="#ff7a00" />
+              </linearGradient>
+              <filter id="heroGlow">
+                <feGaussianBlur stdDeviation="8" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle cx="210" cy="310" r="175" class="hero-ring hero-ring--outer"></circle>
+            <circle cx="210" cy="310" r="125" class="hero-ring hero-ring--inner"></circle>
+            <line x1="210" y1="20" x2="210" y2="110" class="hero-cable"></line>
+            <path
+              d="M175 36 H245 M186 36 V74 C186 96 203 111 210 111 C217 111 234 96 234 74 V36"
+              class="hero-hook"
+              filter="url(#heroGlow)"
+            ></path>
+
+            <rect x="145" y="140" width="130" height="230" rx="34" fill="url(#heroBody)"></rect>
+            <rect x="166" y="170" width="88" height="98" rx="18" class="hero-core"></rect>
+            <rect x="274" y="210" width="34" height="122" rx="16" class="hero-cylinder"></rect>
+            <rect x="120" y="188" width="18" height="170" rx="9" class="hero-pipe"></rect>
+            <circle cx="145" cy="390" r="30" class="hero-wheel"></circle>
+            <circle cx="275" cy="390" r="30" class="hero-wheel"></circle>
+            <circle cx="210" cy="402" r="26" class="hero-camera" filter="url(#heroGlow)"></circle>
+            <path
+              d="M164 430 L132 488 L156 500 L184 450"
+              class="hero-grip"
+              filter="url(#heroGlow)"
+            ></path>
+            <path
+              d="M256 430 L288 488 L264 500 L236 450"
+              class="hero-grip"
+              filter="url(#heroGlow)"
+            ></path>
+            <path
+              d="M176 465 H244 V530 C244 548 229 564 210 564 C191 564 176 548 176 530 Z"
+              class="hero-base"
+            ></path>
+            <circle cx="210" cy="219" r="6" class="hero-node"></circle>
+            <circle cx="210" cy="242" r="6" class="hero-node"></circle>
+            <circle cx="210" cy="265" r="6" class="hero-node"></circle>
+          </svg>
+
+          <div class="visual-foot">
+            <span class="system-chip">Wired Data Transfer</span>
+            <span class="system-chip">Life Support Delivery</span>
+            <span class="system-chip">Servo Stabilization</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <div class="section-header reveal">
+          <span class="section-badge">Project Overview</span>
+          <h2>Built for the most difficult vertical rescue environments</h2>
+          <p>
+            Borewell incidents demand speed, visibility, communication, and
+            life-support intervention in spaces too narrow and unstable for
+            direct human access.
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="surface narrative-card reveal">
+            <h3>What is a borewell?</h3>
+            <p>
+              A borewell is a deep, narrow shaft drilled into the ground to
+              access water. When left uncovered or poorly secured, it becomes a
+              confined vertical hazard that is extremely difficult to access in
+              an emergency.
+            </p>
+          </article>
+
+          <article class="surface narrative-card reveal">
+            <h3>Why accidents occur</h3>
+            <p>
+              Open borewells, weak safety barriers, low visibility, limited
+              oxygen flow, and the inability to deploy standard rescue equipment
+              quickly make these incidents uniquely dangerous.
+            </p>
+          </article>
+
+          <article class="surface narrative-card narrative-card--alert reveal">
+            <h3>Problem statement</h3>
+            <p>
+              Traditional rescue methods struggle with narrow diameters,
+              unstable walls, poor communication, and delayed environmental
+              assessment. A compact robotic intervention platform can stabilize
+              the response window and support the victim immediately.
+            </p>
+          </article>
+        </div>
+
+        <div class="stats-grid">
+          <article class="surface stat-card reveal">
+            <span class="stat-card__value">150-300 mm</span>
+            <span class="stat-card__label">Typical shaft access constraints</span>
+          </article>
+          <article class="surface stat-card reveal">
+            <span class="stat-card__value">Real-time</span>
+            <span class="stat-card__label">Sensor, camera, and operator feedback</span>
+          </article>
+          <article class="surface stat-card reveal">
+            <span class="stat-card__value">Multi-support</span>
+            <span class="stat-card__label">Oxygen, water, communication, stabilization</span>
+          </article>
+          <article class="surface stat-card reveal">
+            <span class="stat-card__value">Zero-entry</span>
+            <span class="stat-card__label">Human responders stay above the hazard zone</span>
+          </article>
+        </div>
+
+        <div class="mission-grid">
+          <article class="surface mission-card reveal">
+            <h3>Mission</h3>
+            <p>
+              Preserve life during the most critical early minutes of a
+              confined-space emergency by delivering visibility, situational
+              awareness, and survival assistance directly to the victim.
+            </p>
+          </article>
+          <article class="surface mission-card reveal">
+            <h3>Objective</h3>
+            <p>
+              Enable rescue teams to monitor live conditions, establish
+              communication, deploy essential supplies, and make safer
+              intervention decisions through one integrated robotic platform.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="robot">
+        <div class="section-header reveal">
+          <span class="section-badge">Robot Overview</span>
+          <h2>Interactive component map of the rescue platform</h2>
+          <p>
+            Hover over each subsystem to inspect its function within the rescue
+            stack.
+          </p>
+        </div>
+
+        <div class="robot-grid">
+          <div class="surface diagram-panel reveal">
+            <div class="diagram-panel__head">
+              <span>Subsystem Diagram</span>
+              <span class="signal-pill signal-pill--orange">
+                <i></i>
+                Hover components for details
+              </span>
+            </div>
+
+            <div class="diagram-stage" id="diagramStage">
+              <svg
+                class="robot-diagram"
+                viewBox="0 0 860 660"
+                role="img"
+                aria-label="Labeled diagram of LifeLine Rescue Bot"
+              >
+                <defs>
+                  <linearGradient id="robotBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#132535" />
+                    <stop offset="100%" stop-color="#1f3b53" />
+                  </linearGradient>
+                  <linearGradient id="robotCore" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#153a4a" />
+                    <stop offset="100%" stop-color="#10222d" />
+                  </linearGradient>
+                </defs>
+
+                <g class="diagram-grid">
+                  <path d="M0 100 H860 M0 200 H860 M0 300 H860 M0 400 H860 M0 500 H860" />
+                  <path d="M120 0 V660 M240 0 V660 M360 0 V660 M480 0 V660 M600 0 V660 M720 0 V660" />
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="cable"
+                  data-title="Data Transfer Cable"
+                  data-description="The primary wired link for telemetry, camera streaming, and operator commands between the robot and the surface control station."
+                >
+                  <line x1="432" y1="24" x2="432" y2="136" class="part-stroke part-stroke--cyan" />
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="hook"
+                  data-title="Holding Hook"
+                  data-description="Suspends the system during descent, keeps the robot centered, and supports stable deployment inside the shaft."
+                >
+                  <path d="M384 40 H480 M400 40 V92 C400 118 420 134 432 134 C444 134 464 118 464 92 V40" class="part-stroke part-stroke--orange" />
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="electronics"
+                  data-title="Electronics Compartment"
+                  data-description="Contains the controller, sensor interfaces, power routing, and mission-critical electronics that coordinate the rescue system."
+                >
+                  <rect x="360" y="156" width="144" height="244" rx="40" fill="url(#robotBody)" class="part-fill"></rect>
+                  <rect x="386" y="196" width="92" height="108" rx="20" fill="url(#robotCore)" class="part-fill"></rect>
+                  <circle cx="432" cy="229" r="6" class="part-led"></circle>
+                  <circle cx="432" cy="251" r="6" class="part-led"></circle>
+                  <circle cx="432" cy="273" r="6" class="part-led"></circle>
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="oxygen"
+                  data-title="Oxygen Cylinder"
+                  data-description="Stores emergency oxygen to sustain the trapped victim and improve survivability while the rescue team prepares extraction."
+                >
+                  <rect x="520" y="212" width="42" height="146" rx="19" class="part-fill part-fill--orange"></rect>
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="water"
+                  data-title="Water Delivery Pipe"
+                  data-description="Channels water safely to the victim for hydration support during extended rescue operations."
+                >
+                  <rect x="322" y="190" width="18" height="176" rx="9" class="part-fill part-fill--cyan"></rect>
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="wheels"
+                  data-title="Wheels"
+                  data-description="Assist alignment and controlled movement while navigating inside the shaft and contacting inner walls."
+                >
+                  <circle cx="360" cy="422" r="34" class="part-wheel"></circle>
+                  <circle cx="504" cy="422" r="34" class="part-wheel"></circle>
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="camera"
+                  data-title="Downward Facing Camera"
+                  data-description="Streams live visuals from below the robot so operators can identify the victim, obstacles, and rescue approach conditions."
+                >
+                  <circle cx="432" cy="432" r="30" class="part-camera"></circle>
+                  <circle cx="432" cy="432" r="11" class="part-camera__lens"></circle>
+                </g>
+
+                <g
+                  class="diagram-part"
+                  data-target="grip"
+                  data-title="Servo Controlled Gripping Mechanism"
+                  data-description="Extends against shaft walls to stabilize the robot, reduce sway, and hold the platform securely during support delivery."
+                >
+                  <path d="M388 462 L336 548 L364 562 L410 486" class="part-stroke part-stroke--orange part-arm" />
+                  <path d="M476 462 L528 548 L500 562 L454 486" class="part-stroke part-stroke--orange part-arm" />
+                </g>
+
+                <g class="diagram-base">
+                  <path d="M398 492 H466 V564 C466 588 451 608 432 608 C413 608 398 588 398 564 Z" />
+                </g>
+
+                <g class="diagram-labels">
+                  <line x1="432" y1="50" x2="618" y2="50" />
+                  <text x="632" y="56">Data Transfer Cable</text>
+
+                  <line x1="450" y1="98" x2="640" y2="120" />
+                  <text x="654" y="126">Holding Hook</text>
+
+                  <line x1="500" y1="248" x2="674" y2="222" />
+                  <text x="688" y="228">Electronics Compartment</text>
+
+                  <line x1="542" y1="272" x2="700" y2="294" />
+                  <text x="714" y="300">Oxygen Cylinder</text>
+
+                  <line x1="332" y1="250" x2="170" y2="228" />
+                  <text x="38" y="234">Water Delivery Pipe</text>
+
+                  <line x1="360" y1="422" x2="196" y2="408" />
+                  <text x="98" y="414">Wheels</text>
+
+                  <line x1="432" y1="432" x2="646" y2="438" />
+                  <text x="660" y="444">Downward Facing Camera</text>
+
+                  <line x1="364" y1="534" x2="132" y2="556" />
+                  <text x="24" y="562">Servo Controlled Gripping Mechanism</text>
+                </g>
+              </svg>
+
+              <div class="diagram-tooltip" id="diagramTooltip"></div>
+            </div>
+          </div>
+
+          <aside class="surface component-panel reveal">
+            <span class="section-badge section-badge--inline">Component Inspector</span>
+            <h3 id="componentTitle">Electronics Compartment</h3>
+            <p id="componentDescription">
+              Contains the controller, sensor interfaces, power routing, and
+              mission-critical electronics that coordinate the rescue system.
+            </p>
+
+            <div class="component-list">
+              <button class="component-item is-active" type="button" data-target="electronics">
+                <strong>Electronics Compartment</strong>
+                <span>Central intelligence and power routing</span>
+              </button>
+              <button class="component-item" type="button" data-target="hook">
+                <strong>Holding Hook</strong>
+                <span>Primary suspension and stability anchor</span>
+              </button>
+              <button class="component-item" type="button" data-target="cable">
+                <strong>Data Transfer Cable</strong>
+                <span>Telemetry and command uplink</span>
+              </button>
+              <button class="component-item" type="button" data-target="oxygen">
+                <strong>Oxygen Cylinder</strong>
+                <span>Emergency breathing support</span>
+              </button>
+              <button class="component-item" type="button" data-target="water">
+                <strong>Water Delivery Pipe</strong>
+                <span>Hydration support line</span>
+              </button>
+              <button class="component-item" type="button" data-target="camera">
+                <strong>Downward Facing Camera</strong>
+                <span>Live victim and shaft monitoring</span>
+              </button>
+              <button class="component-item" type="button" data-target="wheels">
+                <strong>Wheels</strong>
+                <span>Guided movement and alignment</span>
+              </button>
+              <button class="component-item" type="button" data-target="grip">
+                <strong>Servo Controlled Gripping Mechanism</strong>
+                <span>Wall contact stabilization system</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="dashboard">
+        <div class="section-header reveal">
+          <span class="section-badge">Live Control Room Dashboard</span>
+          <h2>Real-time rescue telemetry and system readiness</h2>
+          <p>
+            The dashboard simulates live environmental conditions, orientation,
+            subsystem health, and operational readiness for active deployment.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dashboard-grid__main">
+            <div class="sensor-grid">
+              <article class="surface sensor-card reveal">
+                <div class="sensor-card__head">
+                  <span>Temperature</span>
+                  <span class="status-tag" id="temperatureState">NORMAL</span>
+                </div>
+                <div class="sensor-card__body">
+                  <div class="sensor-gauge sensor-gauge--orange" id="temperatureGauge">
+                    <div class="sensor-gauge__inner">
+                      <strong id="temperatureValue">30.0°C</strong>
+                      <small>Core shaft air</small>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="surface sensor-card reveal">
+                <div class="sensor-card__head">
+                  <span>Humidity</span>
+                  <span class="status-tag" id="humidityState">NORMAL</span>
+                </div>
+                <div class="sensor-card__body">
+                  <div class="sensor-gauge sensor-gauge--cyan" id="humidityGauge">
+                    <div class="sensor-gauge__inner">
+                      <strong id="humidityValue">62%</strong>
+                      <small>Moisture level</small>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="surface sensor-card reveal">
+                <div class="sensor-card__head">
+                  <span>Pitch</span>
+                  <span class="status-tag" id="pitchState">NORMAL</span>
+                </div>
+                <div class="sensor-card__body">
+                  <div class="sensor-gauge sensor-gauge--red" id="pitchGauge">
+                    <div class="sensor-gauge__inner">
+                      <strong id="pitchValue">0°</strong>
+                      <small>Forward tilt</small>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="surface sensor-card reveal">
+                <div class="sensor-card__head">
+                  <span>Roll</span>
+                  <span class="status-tag" id="rollState">NORMAL</span>
+                </div>
+                <div class="sensor-card__body">
+                  <div class="sensor-gauge sensor-gauge--orange" id="rollGauge">
+                    <div class="sensor-gauge__inner">
+                      <strong id="rollValue">0°</strong>
+                      <small>Lateral tilt</small>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="surface sensor-card reveal">
+                <div class="sensor-card__head">
+                  <span>Yaw</span>
+                  <span class="status-tag" id="yawState">NORMAL</span>
+                </div>
+                <div class="sensor-card__body">
+                  <div class="sensor-gauge sensor-gauge--cyan" id="yawGauge">
+                    <div class="sensor-gauge__inner">
+                      <strong id="yawValue">180°</strong>
+                      <small>Heading reference</small>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="surface sensor-card sensor-card--status reveal">
+                <div class="sensor-card__head">
+                  <span>Robot Status</span>
+                  <span class="status-tag" id="robotState">NORMAL</span>
+                </div>
+                <div class="status-core">
+                  <strong id="robotCondition">DEPLOYED</strong>
+                  <p id="robotNarrative">
+                    All critical rescue subsystems are stable.
+                  </p>
+                  <div class="status-ring" id="robotStatusRing">
+                    <span id="robotHealth">92%</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="chart-grid">
+              <article class="surface chart-card reveal">
+                <div class="chart-card__head">
+                  <div>
+                    <h3>Temperature Trace</h3>
+                    <p>Live shaft temperature over time</p>
+                  </div>
+                  <span class="chart-pill chart-pill--orange">1s refresh</span>
+                </div>
+                <canvas id="temperatureChart" width="360" height="220"></canvas>
+              </article>
+
+              <article class="surface chart-card reveal">
+                <div class="chart-card__head">
+                  <div>
+                    <h3>Humidity Trace</h3>
+                    <p>Moisture variation inside the rescue zone</p>
+                  </div>
+                  <span class="chart-pill chart-pill--cyan">1s refresh</span>
+                </div>
+                <canvas id="humidityChart" width="360" height="220"></canvas>
+              </article>
+
+              <article class="surface chart-card reveal">
+                <div class="chart-card__head">
+                  <div>
+                    <h3>Orientation Trace</h3>
+                    <p>Pitch, roll, and yaw motion profile</p>
+                  </div>
+                  <div class="chart-legend">
+                    <span><i class="legend-dot legend-dot--red"></i>Pitch</span>
+                    <span><i class="legend-dot legend-dot--orange"></i>Roll</span>
+                    <span><i class="legend-dot legend-dot--cyan"></i>Yaw</span>
+                  </div>
+                </div>
+                <canvas id="orientationChart" width="360" height="220"></canvas>
+              </article>
+            </div>
+          </div>
+
+          <aside class="dashboard-grid__side">
+            <article class="surface status-panel reveal">
+              <div class="status-panel__head">
+                <h3>Robot Status Panel</h3>
+                <span class="signal-pill">
+                  <i></i>
+                  Live Sync
+                </span>
+              </div>
+
+              <div class="status-list">
+                <div class="status-row">
+                  <div class="status-row__head">
+                    <span>Power Status</span>
+                    <strong id="powerLabel">92%</strong>
+                  </div>
+                  <div class="status-row__track">
+                    <span id="powerBar"></span>
+                  </div>
+                </div>
+
+                <div class="status-row">
+                  <div class="status-row__head">
+                    <span>Camera Status</span>
+                    <strong id="cameraLabel">INITIALIZING</strong>
+                  </div>
+                  <div class="status-row__track">
+                    <span id="cameraBar"></span>
+                  </div>
+                </div>
+
+                <div class="status-row">
+                  <div class="status-row__head">
+                    <span>Oxygen Status</span>
+                    <strong id="oxygenLabel">88%</strong>
+                  </div>
+                  <div class="status-row__track">
+                    <span id="oxygenBar"></span>
+                  </div>
+                </div>
+
+                <div class="status-row">
+                  <div class="status-row__head">
+                    <span>Water Status</span>
+                    <strong id="waterLabel">82%</strong>
+                  </div>
+                  <div class="status-row__track">
+                    <span id="waterBar"></span>
+                  </div>
+                </div>
+
+                <div class="status-row">
+                  <div class="status-row__head">
+                    <span>Communication Status</span>
+                    <strong id="communicationLabel">SECURE</strong>
+                  </div>
+                  <div class="status-row__track">
+                    <span id="communicationBar"></span>
+                  </div>
+                </div>
+
+                <div class="status-row">
+                  <div class="status-row__head">
+                    <span>Stabilization Status</span>
+                    <strong id="stabilizationLabel">LOCKED</strong>
+                  </div>
+                  <div class="status-row__track">
+                    <span id="stabilizationBar"></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="surface event-panel reveal">
+              <div class="status-panel__head">
+                <h3>Mission Event Stream</h3>
+                <span class="chart-pill">Control Log</span>
+              </div>
+              <ul class="event-list" id="eventList">
+                <li>
+                  <span>Control link established for rescue robot.</span>
+                  <small>00:00:00</small>
+                </li>
+                <li>
+                  <span>Telemetry simulation online and stable.</span>
+                  <small>00:00:01</small>
+                </li>
+                <li>
+                  <span>Awaiting active rescue deployment command.</span>
+                  <small>00:00:02</small>
+                </li>
+              </ul>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="video">
+        <div class="section-header reveal">
+          <span class="section-badge">Live Video Feed</span>
+          <h2>Real-Time Rescue Monitoring</h2>
+          <p>
+            Use the onboard camera stream or webcam fallback to simulate the
+            visual monitoring layer used during a rescue operation.
+          </p>
+        </div>
+
+        <div class="surface video-shell reveal">
+          <div class="video-shell__head">
+            <div>
+              <h3>Real-Time Rescue Monitoring</h3>
+              <p>Operator visual feed with timestamp, recording status, and link quality</p>
+            </div>
+            <div class="video-shell__signals">
+              <span class="recording-badge">
+                <i></i>
+                REC
+              </span>
+              <span class="chart-pill" id="signalQuality">Signal 96%</span>
+            </div>
+          </div>
+
+          <div class="video-stage">
+            <video id="liveVideo" autoplay muted playsinline></video>
+
+            <div class="video-fallback" id="videoFallback">
+              <div class="video-fallback__overlay"></div>
+              <div class="video-fallback__core">
+                <div class="video-fallback__reticle"></div>
+                <div class="video-fallback__text">
+                  <strong>SIMULATED RESCUE FEED</strong>
+                  <span>Webcam unavailable or permission not granted</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="video-meta video-meta--top">
+              <span id="videoTimestamp">Timestamp syncing...</span>
+              <span id="videoSource">Source: initializing</span>
+            </div>
+
+            <div class="video-meta video-meta--bottom">
+              <span class="signal-pill signal-pill--cyan">
+                <i></i>
+                Rescue Feed Active
+              </span>
+              <span class="chart-pill">Confined-Space Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="section-header reveal">
+          <span class="section-badge">Robot Features</span>
+          <h2>Mission-focused capabilities for rapid survival support</h2>
+          <p>
+            Each subsystem is engineered to help rescue teams see, communicate,
+            stabilize, and assist before extraction begins.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">01</div>
+            <h3>Live Video Monitoring</h3>
+            <p>Continuous visual inspection of the victim and shaft conditions.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">02</div>
+            <h3>Two-Way Communication</h3>
+            <p>Improves reassurance, coordination, and operator guidance.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">03</div>
+            <h3>Oxygen Supply</h3>
+            <p>Emergency respiratory support for low-oxygen environments.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">04</div>
+            <h3>Water Delivery</h3>
+            <p>Controlled hydration support during prolonged rescue operations.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">05</div>
+            <h3>Real-Time Sensor Monitoring</h3>
+            <p>Tracks temperature, humidity, and orientation continuously.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">06</div>
+            <h3>Wall Gripping Stabilization</h3>
+            <p>Servo arms brace against the shaft for steady intervention.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">07</div>
+            <h3>Downward Camera</h3>
+            <p>Provides clear visibility beneath the robot during descent.</p>
+          </article>
+          <article class="surface feature-card reveal">
+            <div class="feature-icon">08</div>
+            <h3>Emergency Assistance</h3>
+            <p>Supports early life-saving actions before extraction is possible.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="workflow">
+        <div class="section-header reveal">
+          <span class="section-badge">How It Works</span>
+          <h2>Operational timeline from deployment to monitoring</h2>
+          <p>
+            The rescue workflow is designed to prioritize stabilization,
+            communication, and sustained support in the earliest response window.
+          </p>
+        </div>
+
+        <ol class="timeline">
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">01</span>
+            <h3>Robot lowered into borewell</h3>
+            <p>The holding hook and cable guide the system safely into the shaft.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">02</span>
+            <h3>Camera identifies victim</h3>
+            <p>Live feed provides first visual confirmation of victim location.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">03</span>
+            <h3>Sensors collect environmental data</h3>
+            <p>Temperature, humidity, and motion data inform the rescue team.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">04</span>
+            <h3>Gripping mechanism stabilizes robot</h3>
+            <p>Servo arms brace against the shaft wall for operational steadiness.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">05</span>
+            <h3>Communication established</h3>
+            <p>Operators coordinate response while reassuring the trapped victim.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">06</span>
+            <h3>Oxygen supplied</h3>
+            <p>Emergency oxygen improves survivability in restricted airflow zones.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">07</span>
+            <h3>Water supplied</h3>
+            <p>The delivery pipe supports hydration during prolonged rescues.</p>
+          </li>
+          <li class="surface timeline-card reveal">
+            <span class="timeline-card__step">08</span>
+            <h3>Rescue team monitors conditions</h3>
+            <p>Continuous dashboard data supports safer extraction planning.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" id="specs">
+        <div class="section-header reveal">
+          <span class="section-badge">Technical Specifications</span>
+          <h2>Engineering reference sheet</h2>
+          <p>
+            A concise systems summary of the present LifeLine Rescue Bot
+            prototype configuration.
+          </p>
+        </div>
+
+        <div class="surface specs-table-wrap reveal">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Subsystem</th>
+                <th>Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Controller</td>
+                <td>Arduino Uno</td>
+              </tr>
+              <tr>
+                <td>Sensors</td>
+                <td>DHT11, MPU6050</td>
+              </tr>
+              <tr>
+                <td>Communication</td>
+                <td>Wired Data Transfer</td>
+              </tr>
+              <tr>
+                <td>Camera</td>
+                <td>Downward Facing Camera</td>
+              </tr>
+              <tr>
+                <td>Power</td>
+                <td>Battery Powered</td>
+              </tr>
+              <tr>
+                <td>Support Systems</td>
+                <td>Oxygen Cylinder, Water Delivery Tube, Servo Stabilization</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="team">
+        <div class="section-header reveal">
+          <span class="section-badge">Project Team</span>
+          <h2>Cross-functional rescue system development team</h2>
+          <p>
+            Hardware, research, testing, and web application development are
+            coordinated as one mission unit.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="surface team-card reveal">
+            <h3>Jashanpreet Singh</h3>
+            <p>Hardware &amp; Technical Development Lead</p>
+          </article>
+          <article class="surface team-card reveal">
+            <h3>Ridham Lal</h3>
+            <p>Hardware Integration &amp; Mechanical Development</p>
+          </article>
+          <article class="surface team-card reveal">
+            <h3>Ekta Rai</h3>
+            <p>Research &amp; Documentation</p>
+          </article>
+          <article class="surface team-card reveal">
+            <h3>Aasta</h3>
+            <p>Research &amp; Documentation</p>
+          </article>
+          <article class="surface team-card reveal">
+            <h3>Bhumi</h3>
+            <p>Web Application Development</p>
+          </article>
+          <article class="surface team-card reveal">
+            <h3>Hitesh Singh</h3>
+            <p>Testing &amp; Validation</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="future">
+        <div class="section-header reveal">
+          <span class="section-badge">Future Scope</span>
+          <h2>Next-generation rescue capabilities</h2>
+          <p>
+            The platform can evolve into a more autonomous, intelligent, and
+            cloud-connected rescue system.
+          </p>
+        </div>
+
+        <div class="future-grid">
+          <article class="surface future-card reveal">
+            <h3>Thermal Imaging</h3>
+            <p>Improved visibility in low-light, dust, or obstructed conditions.</p>
+          </article>
+          <article class="surface future-card reveal">
+            <h3>AI Victim Detection</h3>
+            <p>Automated recognition of body position and movement cues.</p>
+          </article>
+          <article class="surface future-card reveal">
+            <h3>Gas Detection Sensors</h3>
+            <p>Continuous monitoring for hazardous air compositions underground.</p>
+          </article>
+          <article class="surface future-card reveal">
+            <h3>Autonomous Navigation</h3>
+            <p>Smarter self-correction for descent, orientation, and placement.</p>
+          </article>
+          <article class="surface future-card reveal">
+            <h3>Robotic Manipulator Arm</h3>
+            <p>Expanded capacity for direct object handling and rescue assistance.</p>
+          </article>
+          <article class="surface future-card reveal">
+            <h3>Cloud Monitoring</h3>
+            <p>Remote data access, mission logging, and multi-team coordination.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <div>
+          <strong>LifeLine Rescue Bot</strong>
+          <p>Emergency Survival Assistance System for Borewell and Confined-Space Rescue Operations</p>
+        </div>
+        <div>
+          <strong>Team Information</strong>
+          <p>Developed by the LifeLine Rescue Bot project team</p>
+        </div>
+        <div>
+          <strong>Institution</strong>
+          <p>GNA University<br />Aerospace Engineering Department</p>
+        </div>
+      </div>
+      <p class="footer__note">
+        &copy; <span id="currentYear"></span> LifeLine Rescue Bot. All rights reserved.
+      </p>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Scroll to top">
+      ↑
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
